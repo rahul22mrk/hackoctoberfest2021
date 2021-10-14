@@ -1,0 +1,21 @@
+// C++ Implementation to Reverse a string
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function to reverse a string
+void stringReversal(string& str)
+{
+    int n = str.length();
+    for (int i = 0; i < n / 2; i++)
+        swap(str[i], str[n - i - 1]);
+}
+
+// Main program
+int main()
+{
+    string str = "Hackoctoberfest2021";
+    stringReversal(str);
+    cout << str;
+    return 0;
+}
