@@ -10,7 +10,7 @@ class Question11{
 		double radius = sc.nextDouble();
 
 	
-		System.out.println("Perimeter Is :: "+ pi* radius );
+		System.out.println("Perimeter Is :: "+ 2* pi* radius );
 		System.out.println("Area Is ::"+  pi*radius * radius );
 
 }
