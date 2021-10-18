@@ -1,58 +1,57 @@
-// Radix Sort in C++ Programming
+#include <bits/stdc++.h>
 
-#include <iostream>
 using namespace std;
 
-int getMax(int array[], int n) {
-  int max = array[0];
-  for (int i = 1; i < n; i++)
-    if (array[i] > max)
-      max = array[i];
-  return max;
+void countSort(vector<int> &arr, int n, int exp) {
+	int size = (*max_element(arr.begin(), arr.end()) 
+					- *min_element(arr.begin(), arr.end())) + 1;
+
+	vector<int> count(size, 0);
+	vector<int> sol(n);
+
+	for (int i = 0; i < n; i++) {
+		count[(arr[i] / exp) % 10]++;
+	}
+
+	for (int i = 1; i < count.size(); i++) {
+		count[i] += count[i - 1];
+	}
+
+	for (int i = n - 1; i >= 0; i--) {
+		sol[count[(arr[i] / exp) % 10] - 1] = arr[i];
+		count[(arr[i] / exp) % 10]--;
+	}
+
+	for (int i = 0; i < n; i++) {
+		arr[i] = sol[i];
+	}
 }
 
-void countingSort(int array[], int size, int place) {
-  const int max = 10;
-  int output[size];
-  int count[max];
+void radixSort(vector<int> &arr, int n) {
+	int max = *max_element(arr.begin(), arr.end());
 
-  for (int i = 0; i < max; ++i)
-    count[i] = 0;
-
-  for (int i = 0; i < size; i++)
-    count[(array[i] / place) % 10]++;
-
-  for (int i = 1; i < max; i++)
-    count[i] += count[i - 1];
-
-  for (int i = size - 1; i >= 0; i--) {
-    output[count[(array[i] / place) % 10] - 1] = array[i];
-    count[(array[i] / place) % 10]--;
-  }
-
-  for (int i = 0; i < size; i++)
-    array[i] = output[i];
+	for (int exp = 1; max / exp > 0; exp *= 10) {
+		countSort(arr, n, exp);
+	}
 }
 
-void radixsort(int array[], int size) {
+int main()
+{
+	cout << "Enter the number of elements to be entered : ";
+	int n;
+	cin >> n;
 
-  int max = getMax(array, size);
-  for (int place = 1; max / place > 0; place *= 10)
-    countingSort(array, size, place);
-}
+	vector<int> arr(n, 0);
+	cout << "Enter the elements : \n";
+	for (int i=0 ; i<n ; i++)
+		cin >> arr[i];
 
+	radixSort(arr, n);
+	cout << "Sorted list of elements is : ";
+	for (int i=0 ; i<n ; i++)
+		cout << arr[i] << " ";
 
-void printArray(int array[], int size) {
-  int i;
-  for (i = 0; i < size; i++)
-    cout << array[i] << " ";
-  cout << endl;
-}
+	cout << "\n";
 
-
-int main() {
-  int array[] = {121, 432, 564, 23, 1, 45, 788};
-  int n = sizeof(array) / sizeof(array[0]);
-  radixsort(array, n);
-  printArray(array, n);
+	return 0;
 }
