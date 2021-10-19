@@ -1,0 +1,182 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+div {
+	display: block;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f6f8fa;
+}
+
+.login {
+	margin: 0 auto;
+	padding: 20px 0;
+	max-width: 1000px;
+	height: 80vh;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo-text {
+	width: 60%;
+	height: 200px;
+}
+
+.login-main {
+	min-width: 400px;
+	height: 300px;
+}
+
+.logo {
+	text-transform: lowercase;
+	color: #0077b6;
+	font-size: 80px;
+	font-weight: 700;
+}
+
+.text {
+	margin-top: 0.5em;
+	margin-right: 4em;
+	font-size: 30px;
+}
+
+.form-login {
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+form {
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+form input, form button{
+	display: block;
+}
+
+form input {
+	margin: 0 auto;
+	color: black;
+	border: 2.5px solid #DDDDDD;
+	padding: 5px 15px;
+	line-height: 2.5;
+	font-size: 16px;
+	outline: none;
+	width: 100%;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+form input::placeholder {
+	color: #b2b2b2;
+}
+
+form input:focus {
+	border: 2.5px solid #0077b6;
+	outline: 2.5px solid rgba(0, 0, 255, 0.2);
+}
+
+form button {
+	margin: auto;
+	padding: 5px 15px;
+	line-height: 2;
+	font-size: 20px;
+	font-weight: 800;
+	width: 100%;
+	border: none;
+	background-color: #0077b6;
+	color: white;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+form a{
+	display: inline-block;
+	text-align: center;
+	margin: 0.2em auto;
+	padding: 1em;
+	text-decoration: none;
+	color: #00a0dd;
+}
+
+form a:hover {
+	text-decoration: underline;
+}
+
+form hr {
+	margin: 0 0 10px 0;
+	padding: 0;
+	width: 100%;
+}
+
+form button[type="button"] {
+	background-color: green;
+}
+
+.after-login-main {
+	margin: 2em;
+	text-align: center;
+}
+
+.bold-font {
+	font-weight: bold;
+}
+
+@media (max-width: 9300px) {
+	.login {
+		flex-direction: column;
+	}
+}
