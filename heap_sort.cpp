@@ -1,49 +1,54 @@
 #include <bits/stdc++.h>
-
+#include <algorithm>
+#include <set>
+#include <math.h>
+#include <vector>
+#define int long long 
+#define mode 998244353
 using namespace std;
-
-void heapify(int arr[], int i, int n) {
-	int l = 2*i + 1;
-	int r = 2*i + 2;
-
-	int smallest = i;
-
-	if (l < n && arr[l] < arr[smallest])
-		smallest = l;
-
-	if (r < n && arr[r] < arr[smallest])
-		smallest = r;
-
-	if (smallest != i) {
-		swap(arr[i], arr[smallest]);
-		heapify(arr, smallest, n);
-	}
-}
-
-void heapSort(int arr[], int n) {
-	for (int i = n / 2 - 1; i >= 0; i--) {
-		heapify(arr, i, n);
-	}
-
-	for (int i = n - 1; i > 0; i--) {
-		swap(arr[i], arr[0]);
-
-		heapify(arr, 0, i);
-	}
-}
-
-int main() {
-	int arr[] = { 12, 11, 13, 5, 6, 7 };
-    int n = sizeof(arr) / sizeof(arr[0]);
- 
-    heapSort(arr, n);
- 
-    cout << "Sorted array is \n";
-
-    for (int i = n - 1; i >= 0; i--) {
-    	cout << arr[i] << "\t";
+class Solution
+{
+    public:
+    void heapify(int a[], int n, int x)  {
+        int l=x;
+        int left = (2*x)+1;
+        int right = (2*x)+2;
+        if(left<n && a[left]>a[l]){
+            l=left;
+        }
+        if(right<n && a[right]>a[l]){
+            l=right;
+        }
+        if(l!=x){
+            swap(a[x] , a[l]);
+            heapify(a , n , l);
+        }
     }
-    cout << endl;
 
+    public:
+    void buildHeap(int arr[], int n)  { 
+        int x;
+        x = (n/2)-1;
+        for(int i=x;i>=0;i--){
+            heapify(arr , n , i);
+        }
+    }
+    public:
+    void heapSort(int a[], int n){
+        buildHeap(a , n);
+        for(int i=n-1;i>=0;i--){
+            swap(a[0] , a[i]);
+            heapify(a, i ,0);
+        }
+    }
+};
+int32_t main(){
+    int n = 5;
+    int arr[] = {4,1,3,9,7};
+    Solution ob;
+    ob.heapSort(arr , n);
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
     return 0;
 }
