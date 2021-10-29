@@ -1,0 +1,18 @@
+//Problem - https://www.codechef.com/problems/INTEST
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+ int main()
+ {
+   int i=0,n,k;
+   cin>>n>>k;
+   int ar[n];
+   for(int j=0;j<n;j++)
+   {
+   cin>>ar[j];
+   if(ar[j]%k==0)
+   i++;
+   }
+   cout<<i;
+ }
