@@ -1,0 +1,28 @@
+// https://www.codechef.com/problems/MSNSADM1
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+int t;
+cin>>t;
+while(t--)
+{
+    int n;
+    cin>>n;
+    int arr[n],ar[n];
+    for(int i=0;i<n;i++)
+    cin>>arr[i];
+    for(int i=0;i<n;i++)
+    cin>>ar[i];
+    int arrr[n];
+    for(int i=0;i<n;i++)
+    arrr[i]=arr[i]*20-ar[i]*10;
+    sort(arrr,arrr+n);
+    if(arrr[n-1]<0)
+    cout<<"0"<<endl;
+    else
+    cout<<arrr[n-1]<<endl;
+}
+}
