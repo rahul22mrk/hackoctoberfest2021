@@ -1,0 +1,31 @@
+// https://www.codechef.com/problems/FAKEGCD
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+#define loop(i,iv,n) for(int i=iv;i<n;++i)
+#define pb push_back
+#define ff first
+#define ss second
+#define vi vector<int>
+#define vll vector<ll>
+#define vpi vector<pair<int,int>>
+ll mod=1000000007;
+int main() {
+    // your code goes here
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);cout.tie(NULL);
+    ll t=0;
+    cin>>t;
+    while(t--)
+    {
+        ll n;
+        cin >> n;
+        for(ll i=n;i>=1;i--){
+            cout << i << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
