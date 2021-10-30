@@ -1,0 +1,50 @@
+// https://www.codechef.com/problems/SSCRIPT
+
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner s=new Scanner(System.in);
+		int t=s.nextInt();
+		while(t-->0)
+		{
+		    int n=s.nextInt();
+		    int k=s.nextInt();
+		    String s1=s.next();
+		    char[] c=s1.toCharArray();
+		    int count=0,flag=0;
+		    for(int i=0;i<n;i++)
+		    {
+		        if(c[i]=='*')
+		        {
+		            count++;
+		        }
+		        else
+		        {
+		            count=0;
+		        }
+		        if(count>=k)
+		        {
+		            flag=1;
+		            break;
+		        }
+		    }
+		    if(flag==1)
+		    {
+		        System.out.println("YES");
+		    }
+		    else
+		    {
+		        System.out.println("NO");
+		    }
+		}
+	}
+}
