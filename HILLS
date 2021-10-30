@@ -1,0 +1,47 @@
+// https://www.codechef.com/problems/HILLS
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes 
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n,u,d;
+	    cin>>n>>u>>d;
+	    vector<int> v(n);
+	    for(int i=0;i<n;i++)
+	    cin>>v[i];
+	    int para = 1;
+	    int cnt = 1;
+		
+	    for(int i=0;i<n-1;i++)
+	    {
+	        if(v[i]>=v[i+1])
+	        {
+	            if(v[i]-v[i+1]<=d)
+	            cnt++;
+	            else if(para>0)
+	            {
+	                cnt++;
+	                para--;
+	            }
+				else
+				break;
+	        }
+	        if(v[i]<v[i+1])
+	        {
+	            if(v[i+1]-v[i]<=u)
+	            cnt++;
+				else
+				break;
+	        }
+			
+	        
+	    }
+	    cout<<cnt<<endl;
+	}
+	return 0;
+}
