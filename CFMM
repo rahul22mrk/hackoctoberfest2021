@@ -1,0 +1,45 @@
+// https://www.codechef.com/problems/CFMM
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	   int n;
+	   cin>>n;
+	   string s[n];
+	   int c=0,o=0,d=0,e=0,h=0,f=0;
+	   for(int i=0;i<n;i++)
+	   {
+	       cin>>s[i];
+	   }
+	   
+	   for(int i=0;i<n;i++){
+	       int a=s[i].size();
+	       for(int j=0;j<a;j++){
+	           if(s[i][j]=='c')
+	           c++;
+	           else if(s[i][j]=='o'){
+	           o++;}
+	            else if(s[i][j]=='d'){
+	           d++;}
+	            else if(s[i][j]=='e'){
+	           e++;}
+	           else if(s[i][j]=='c'){
+	           c++;}
+	            else if(s[i][j]=='h'){
+	           h++;}
+	            else if(s[i][j]=='e'){
+	           e++;}
+	            else if(s[i][j]=='f'){
+	           f++;}
+	       }
+	   }
+	   c/=2;
+	   e=e/2;
+	 cout<<min(c,min(o,min(d,min(e,min(h,f)))))<<endl;
+}
+return 0;
+}
