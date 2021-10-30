@@ -1,0 +1,19 @@
+// Problem - https://www.codechef.com/problems/HS08TEST
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int a;
+double b;
+
+int main() {
+  cin>>a>>b;
+  
+  if((a%5) || (a+0.5>b)) {
+    cout<<b;
+    return 0;
+  }
+  
+  cout<<b-a-0.5<<endl;
+}
