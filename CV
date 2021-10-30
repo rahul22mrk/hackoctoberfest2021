@@ -1,0 +1,32 @@
+// https://www.codechef.com/problems/CV
+
+#include <bits/stdc++.h>
+using namespace std;
+bool isconsonent(char ch){
+    if(ch!='a' && ch!='e' && ch!='i' && ch!='o' && ch!='u')
+        return true;
+    return false;
+}
+bool isvowel(char ch){
+    if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+        return true;
+    return false;
+}
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        string str;
+        cin>>str;
+        int count = 0;
+        for(int i=0;i<n;i++){
+            if(isconsonent(str[i]) && isvowel(str[i+1])){
+                count++;
+            }
+        }
+        cout<<count<<endl;
+    }
+	return 0;
+}
