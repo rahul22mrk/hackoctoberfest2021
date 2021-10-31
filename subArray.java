@@ -1,10 +1,8 @@
 import java.util.*;
-
 public class SsubArray
 {
 	public int countFunction(int arr[],int k)
-	{
-		int count=0;
+	{int count=0;
         for(int i=0;i<arr.length;i++)
 		{
             int sum=0;
@@ -20,7 +18,6 @@ public class SsubArray
         }
         return count;
 	}
-	
 	public static void main(String args[])
 	{
 		Scanner sc=new Scanner(System.in);
