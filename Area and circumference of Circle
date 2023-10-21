@@ -1,17 +1,8 @@
-import java.util.*;
-class Question11{
+import math as m
+r = float(input("Enter the radius of the circle :")) #Enter radius of the circle
 
-			public static void main(String[] args) {
-	
-		Scanner sc = new Scanner(System.in);
-	
-		double pi = 3.14;
-		System.out.println("Enter Radius::");
-		double radius = sc.nextDouble();
+def area_perimeter(radius):
+    print("The area of the cirlce of radius {} is : {}".format(r,m.pi*r**2))
+    print("The perimeter of the circle of radius {} is : {}".format(r,2*m.pi*r))
 
-	
-		System.out.println("Perimeter Is :: "+ 2* pi* radius );
-		System.out.println("Area Is ::"+  pi*radius * radius );
-
-}
-	}
+area_perimeter(r)
